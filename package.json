@@ -17,8 +17,21 @@
     "email": "fredrikreinholdsson@icloud.com"
   },
   "license": "MIT",
+
+
   "config": {
     "forge": {
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "erikhofer",
+              "name": "electron-publish-example"
+            }
+          }
+        }
+      ],
       "packagerConfig": {},
       "makers": [
         {

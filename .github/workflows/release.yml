@@ -1,12 +1,13 @@
-name: Release
-on:
-  release:
-    types:
-      - created
+name: Build
+on: 
+  push:
+    tags:
+      - 'v*'
+  pull
+  request
 
 jobs:
-
-  publish_on_linux:
+  build_on_linux:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -15,12 +16,10 @@ jobs:
         node-version: 14
     - name: install dependencies
       run: npm install
-    - name: publish
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: npm run publish
+    - name: build
+      run: npm run make
 
-  publish_on_mac:
+  build_on_mac:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
@@ -29,12 +28,10 @@ jobs:
         node-version: 14
     - name: install dependencies
       run: npm install
-    - name: publish
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: npm run publish
+    - name: build
+      run: npm run make
 
-  publish_on_win:
+  build_on_win:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
@@ -43,7 +40,5 @@ jobs:
         node-version: 14
     - name: install dependencies
       run: npm install
-    - name: publish
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: npm run publish
+    - name: build
+      run: npm run make

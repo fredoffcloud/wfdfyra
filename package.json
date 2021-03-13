@@ -26,8 +26,9 @@
           "name": "@electron-forge/publisher-github",
           "config": {
             "repository": {
-              "owner": "erikhofer",
-              "name": "electron-publish-example"
+              "owner": "fredoffcloud",
+              "name": "wfdfyra",
+              "draft": true
             }
           }
         }

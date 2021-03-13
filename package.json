@@ -1,7 +1,7 @@
 {
   "name": "wfdfyra",
   "productName": "wfdfyra",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Carlsen is king",
   "main": "main.js",
   "scripts": {
@@ -17,8 +17,6 @@
     "email": "fredrikreinholdsson@icloud.com"
   },
   "license": "MIT",
-
-
   "config": {
     "forge": {
       "publishers": [
